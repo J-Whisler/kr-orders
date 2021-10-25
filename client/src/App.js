@@ -1,10 +1,16 @@
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import './App.css';
+import OrdersPage from "./pages/OrdersPage/OrdersPage";
 
 function App() {
   return (
-    <div className="App">
-     
-    </div>
+    <Router>
+      <div className="App">
+      <Switch>
+        <Route path="/orderspage" component={OrdersPage} />
+      </Switch>
+      </div>
+    </Router>
   );
 }
 

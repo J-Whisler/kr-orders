@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import "./OrdersPage.scss";
 import axios from "axios";
 import OrderCard from "../../components/OrderCard/OrderCard";
+import krLogo from "../../assets/kr-logo.png";
 
 const OrdersPage = () => {
   const [listOfOrders, setListOfOrders] = useState([]);
@@ -13,10 +15,25 @@ const OrdersPage = () => {
   }, []);
 
   return (
-    <div className="App">
-      {listOfOrders.map((order, key) => {
-        return <OrderCard order={order} key={key}></OrderCard>;
-      })}
+    <div className="orderspage">
+      <div className="orderspage__header">
+        <div className="orderspage__headerLogo">
+          <img src={krLogo} alt="" />
+        </div>
+        <div className="orderspage__headerHamburger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div className="orderspage__title">
+        <h3>Current Orders</h3>
+      </div>
+      <div className="orderspage__ordersList">
+        {listOfOrders.map((order, key) => {
+          return <OrderCard order={order} key={key}></OrderCard>;
+        })}
+      </div>
     </div>
   );
 };

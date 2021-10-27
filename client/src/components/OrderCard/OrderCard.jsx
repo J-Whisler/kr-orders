@@ -27,10 +27,10 @@ const OrderCard = ({ order }) => {
   //   console.log(dueDateFinalFormat);
 
   //   Ship Date Formatting
-  const shipDateSql = order.shipDate;
-  let shipDateSqlFormatted = shipDateSql.split(/[- :]/);
-  const shipDateSqlFormattedDay = shipDateSqlFormatted[2].substring(0, 2);
-  const shipDateFinalFormat = `${shipDateSqlFormatted[1]}/${shipDateSqlFormattedDay}/${shipDateSqlFormatted[0]}`;
+  //   const shipDateSql = order.shipDate;
+  //   let shipDateSqlFormatted = shipDateSql.split(/[- :]/);
+  //   const shipDateSqlFormattedDay = shipDateSqlFormatted[2].substring(0, 2);
+  //   const shipDateFinalFormat = `${shipDateSqlFormatted[1]}/${shipDateSqlFormattedDay}/${shipDateSqlFormatted[0]}`;
 
   return (
     <div className="ordercard__container">

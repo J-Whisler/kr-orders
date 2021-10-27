@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./OrdersPage.scss";
 import axios from "axios";
-import OrderCard from "../../components/OrderCard/OrderCard";
+import CurrentOrderCard from "../../components/CurrentOrderCard/CurrentOrderCard";
+import ShippedOrderCard from "../../components/ShippedOrderCard/ShippedOrderCard";
 
 const OrdersPage = () => {
   const [listOfAllOrders, setListOfAllOrders] = useState([]);
@@ -51,17 +52,29 @@ const OrdersPage = () => {
       <div className="orderspage__ordersList">
         {ordersDisplayed === 1 &&
           listOfCurrentOrders.map((currentOrder, key) => (
-            <OrderCard order={currentOrder} key={key}></OrderCard>
+            <CurrentOrderCard order={currentOrder} key={key}></CurrentOrderCard>
           ))}
         {ordersDisplayed === 2 &&
           listOfShippedOrders.map((shippedOrder, key) => (
-            <OrderCard order={shippedOrder} key={key}></OrderCard>
+            <ShippedOrderCard order={shippedOrder} key={key}></ShippedOrderCard>
           ))}
 
-        {ordersDisplayed === 3 &&
-          listOfAllOrders.map((order, key) => {
-            return <OrderCard order={order} key={key}></OrderCard>;
-          })}
+        {ordersDisplayed === 3 && (
+          <>
+            {listOfCurrentOrders.map((currentOrder, key) => (
+              <CurrentOrderCard
+                order={currentOrder}
+                key={key}
+              ></CurrentOrderCard>
+            ))}
+            {listOfShippedOrders.map((shippedOrder, key) => (
+              <ShippedOrderCard
+                order={shippedOrder}
+                key={key}
+              ></ShippedOrderCard>
+            ))}
+          </>
+        )}
       </div>
     </div>
   );

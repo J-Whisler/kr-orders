@@ -16,16 +16,6 @@ const OrdersPage = () => {
 
   return (
     <div className="orderspage">
-      <div className="orderspage__header">
-        <div className="orderspage__headerLogo">
-          <img src={krLogo} alt="" />
-        </div>
-        <div className="orderspage__headerHamburger">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
       <div className="orderspage__title">
         <h3>Current Orders</h3>
       </div>
